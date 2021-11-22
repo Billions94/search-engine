@@ -6,7 +6,7 @@ import "./styles.css"
 const NavBar = () => {
   return (
     <>
-      <Navbar className="customBg" variant="dark">
+      <Navbar className="customBg sticky-top" variant="dark">
         <Navbar.Brand href="#home">
         <img src="https://img.icons8.com/color/50/000000/tribal-symbols.png"
             alt=""
