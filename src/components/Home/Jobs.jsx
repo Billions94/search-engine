@@ -11,7 +11,7 @@ const Jobs = ({ data }) => {
           <div className='customBottomBorder'>
           <h6>{d.title}</h6>
           <h6>{d.company_name}</h6>
-          
+          <h6>{d.job_type}</h6>
           </div>
           </Link>
       ))}
