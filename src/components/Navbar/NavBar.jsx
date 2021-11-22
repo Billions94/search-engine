@@ -7,7 +7,8 @@ const NavBar = () => {
   return (
     <>
       <Navbar className="customBg sticky-top" variant="dark">
-        <Navbar.Brand href="#home">
+        <Link to={'/search'}>
+        <Navbar.Brand >
         <img src="https://img.icons8.com/color/50/000000/tribal-symbols.png"
             alt=""
             width="30"
@@ -16,9 +17,10 @@ const NavBar = () => {
           />{" "}
            Tribe
         </Navbar.Brand>
+        </Link>
         <NavItem>
-          <Link to={'/search'}>
-          <div className='text-light'>Home</div>
+          <Link className='home' to={'/search'}>
+          <div className='text-light home'>Home</div>
           </Link>
         </NavItem>
       </Navbar>
