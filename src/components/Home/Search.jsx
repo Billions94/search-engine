@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Col, Row } from "react-bootstrap";
 import { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import Jobs from "./Jobs";
 
@@ -31,7 +32,7 @@ const Search = ({ data, setData, input, setInput }) => {
 
   return (
     <Row className='d-flex px-5'>
-      <Col md={5} className="mt-4">
+      <Col md={5} className="mt-4 customSearchBar">
         <div>
           <Form>
             <Form.Group controlId="formBasicEmail">

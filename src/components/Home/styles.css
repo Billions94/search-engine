@@ -1,3 +1,7 @@
+.customSearchBar {
+    position: fixed top !important;
+}
+
 .customInput {
     border-radius: 20px !important;
     

@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Row, Col } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap";
+import { postTimer } from "../Lib/index"
 import "./styles.css"
 
 const Company = () => {
@@ -31,13 +32,14 @@ const Company = () => {
     <>
     {
        data && data.map(d => (
-           <Row className='justify-content-center'>
-            <Col md={6} className='customComDiv mt-2'>
+           <Row key={d._id}   className='justify-content-center'>
+            <Col key={d._id}  md={6} className='customComDiv mt-2'>
                 <h4 className='text-light text-left'>Company name: {d.company_name}</h4>
                 <h6 className='text-light text-left'>Job Title: {d.title}</h6>
                 <h6 className='text-light text-left'>Job Category: {d.category}</h6>
                 <h6 className='text-light text-left'>Salary: {d.salary}</h6>
                 <h6 className='text-left text-light'>Apply: <a href={d.url} className='text-light text-left'>{d.url}</a></h6>
+                <h6 className='text-left text-light'>Published Date: {postTimer(`${d.publication_date}`)} ago</h6>
             </Col>
             </Row>
         ))

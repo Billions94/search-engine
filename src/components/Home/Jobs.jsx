@@ -7,13 +7,13 @@ const Jobs = ({ data }) => {
     <div className='mt-5 customDiv text-dark pl-2'>
         <h3 className='text-dark text-left mb-5'>Job offers</h3>
       {data && data.map(d => (
-          <Link className='text-dark' to={`/${d.company_name}`} >
-          <div className='customBottomBorder'>
-          <h6 className='text-left'>Job Title: {d.title}</h6>
-          <h6 className='text-left'>Company: {d.company_name}</h6>
-          <h6 className='text-left'>Job Type: {d.job_type}</h6>
-          </div>
-          </Link>
+        <div key={d._id} className='customBottomBorder ListGroup'>
+            <Link key={d._id}  className='text-dark' to={`/${d.company_name}`} >
+                <h6 className='text-left'>Job Title: {d.title}</h6>
+            </Link>
+                <h6 className='text-left'>Company: {d.company_name}</h6>
+                <h6 className='text-left'>Job Type: {d.job_type}</h6>
+        </div>
       ))}
     </div>
   );

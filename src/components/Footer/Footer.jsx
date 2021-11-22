@@ -4,7 +4,7 @@ import "./styles.css"
 const Footer = () => {
 
     return(
-        <div className='mt-5 sticky-bottom'>
+        <div className='mt-5 customFooter'>
             <h4 className='text-light'>Tribe Jobs ™️</h4>
         </div>
     )
