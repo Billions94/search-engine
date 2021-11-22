@@ -1,6 +1,6 @@
 import React from "react";
-import { Form, Button, Col, Row } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { Form, Col, Row } from "react-bootstrap";
+import { useEffect } from "react";
 import "./styles.css";
 import Jobs from "./Jobs";
 
@@ -23,6 +23,7 @@ const Search = ({ data, setData, input, setInput }) => {
   };
 
   useEffect(() => {
+      //react-hooks/exhaustive-deps
     getJobs();
   }, [input]);
 

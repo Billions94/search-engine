@@ -4,7 +4,7 @@ import Search from './components/Home/Search';
 import NavBar from './components/Navbar/NavBar';
 import Footer from './components/Footer/Footer';
 import Company from './components/Company/Company';
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 function App() {
   const [search, setSearch] = useState(null);
@@ -23,7 +23,7 @@ function App() {
       setData={setSearch}
       input={input}
       setInput={setInput}/>}/>
-      <Route path="/:company" element={<Company input={input}/>}/>
+      <Route path="/:company" element={<Company />}/>
     </Routes>
     <Footer />
     </div>

@@ -33,12 +33,11 @@ const Company = () => {
        data && data.map(d => (
            <Row className='justify-content-center'>
             <Col md={6} className='customComDiv mt-2'>
-                <h4 className='text-light'>{d.company_name}</h4>
-                <h4 className='text-light'>{d.title}</h4>
-                <h4 className='text-light'>{d.category}</h4>
-                <h4 className='text-light'>{d.salary}</h4>
-                <h4 className='text-light'>{d.url}</h4>
-                <h4 className='text-light'>{d.category}</h4>
+                <h4 className='text-light text-left'>Company name: {d.company_name}</h4>
+                <h6 className='text-light text-left'>Job Title: {d.title}</h6>
+                <h6 className='text-light text-left'>Job Category: {d.category}</h6>
+                <h6 className='text-light text-left'>Salary: {d.salary}</h6>
+                <h6 className='text-left text-light'>Apply: <a href={d.url} className='text-light text-left'>{d.url}</a></h6>
             </Col>
             </Row>
         ))
