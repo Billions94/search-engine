@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { Row, Col } from "react-bootstrap"
+import "./styles.css"
 
 const Company = () => {
   const [data, setdata] = useState(null);
@@ -29,11 +31,16 @@ const Company = () => {
     <>
     {
        data && data.map(d => (
-            <div>
-                <h1 className='text-light'>{d.category}</h1>
-                <h1 className='text-light'>{d.title}</h1>
-                <h1 className='text-light'>{d.category}</h1>
-            </div>
+           <Row className='justify-content-center'>
+            <Col md={6} className='customComDiv mt-2'>
+                <h4 className='text-light'>{d.company_name}</h4>
+                <h4 className='text-light'>{d.title}</h4>
+                <h4 className='text-light'>{d.category}</h4>
+                <h4 className='text-light'>{d.salary}</h4>
+                <h4 className='text-light'>{d.url}</h4>
+                <h4 className='text-light'>{d.category}</h4>
+            </Col>
+            </Row>
         ))
     }
     </>
