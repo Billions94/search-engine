@@ -14,9 +14,34 @@
 .customDiv {
     border: 1px solid black !important;
     border-radius: 20px !important;
-    background-color: white !important;
+    background-color: transparent !important;
 }
 
 .customBottomBorder {
     border-bottom: 1px solid black !important;
+}
+
+.customerh1Span {
+    font-weight: 700 ;
+    font-size: 16px ;
+    line-height: 24px ;
+}
+@keyframes example {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+  }
+
+.customerh1Span:hover {
+    color: red;
+    animation: example 4s infinite;
+    text-decoration: underline;
+    text-decoration: example;
+}
+
+.customerh3Span {
+    font-weight: 400 ;
+    font-size: 16px ;
+    line-height: 24px ;
 }
