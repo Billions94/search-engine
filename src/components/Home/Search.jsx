@@ -36,6 +36,9 @@ const Search = ({ data, setData, input, setInput }) => {
         <div>
           <Form>
             <Form.Group controlId="formBasicEmail">
+                <Form.Label className='text-light'>
+                    Remote Job Search
+                </Form.Label>
               <Form.Control
                 className="customInput"
                 type="search"

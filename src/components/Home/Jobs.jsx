@@ -6,6 +6,7 @@ const Jobs = ({ data }) => {
   return (
     <div className='mt-5 mb-0 customDiv text-dark px-3 pt-0 pb-2'>
         <h3 className='text-light mt-0 text-left mb-5 jobs sticky-top'>Jobs </h3>
+        
       {data && data.map(d => (
         <ul key={d._id} className=' list-group '>
             <div className='text-left NaN list-group-item pl-3 mb-2'>
