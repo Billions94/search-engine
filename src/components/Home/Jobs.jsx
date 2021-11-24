@@ -1,8 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { addToFavAction } from "../../redux/actions";
 
-const Jobs = ({ data }) => {
-    console.log("mind you i'm in jobs",data)
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = (dispatch) => ({
+    addToFavorites: (fav) => {
+      dispatch(addToFavAction(fav))
+    }
+})
+
+const Jobs = ({ data, addToFavorites } ) => {
+  console.log("mind you i'm in data",data)
+    console.log("mind you i'm in jobs",addToFavorites)
   return (
     <div className='mt-5 mb-0 customDiv text-dark px-3 pt-0 pb-2'>
         <h3 className='text-light mt-0 text-left mb-5 jobs sticky-top'>Jobs </h3>
@@ -32,8 +43,8 @@ const Jobs = ({ data }) => {
                       </div>
                     </div>
                 </div>    
-                    <div className='customerh3Span text-muted ml-4'>
-                        <img onClick src="https://img.icons8.com/color/50/000000/add-to-favorites.png" width='30px'/>
+                    <div className='favoriteIcon text-muted ml-4'>
+                        <img onClick={() => addToFavorites(d)} src="https://img.icons8.com/color/50/000000/add-to-favorites.png" width='30px'/>
                     </div>
                 </div>
             </div>
@@ -43,4 +54,4 @@ const Jobs = ({ data }) => {
   );
 };
 
-export default Jobs;
+export default connect(mapStateToProps, mapDispatchToProps)(Jobs)
