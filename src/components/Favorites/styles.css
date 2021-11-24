@@ -1,0 +1,41 @@
+@keyframes example {
+    0%   {color: red;}
+    25%  {color: orange;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
+
+.customh1 {
+    color: white;
+}
+
+.customh1:hover {
+    color: red ;
+    animation: example 4s infinite ;
+    text-decoration: underline ;
+    text-decoration: example ;
+}
+
+.removeFav:hover {
+    cursor: pointer;
+}
+
+.favDivContainer {
+    border: 1px solid white;
+    border-radius: 20px;
+    border-color: white;
+    height: 530px;
+    overflow-x: scroll;
+}
+
+.favList {
+    border-bottom: 1px solid white;
+    background-color: rgb(15, 15, 15)
+}
+
+.indicator {
+    border: 1px solid white;
+    border-radius: 50px;
+    width: 50px;
+    padding-right: 12px;
+}

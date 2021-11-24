@@ -34,7 +34,7 @@
     25%  {color: orange;}
     50%  {color: blue;}
     100% {color: green;}
-  }
+}
 
 .customerh1Span:hover {
     color: red;
