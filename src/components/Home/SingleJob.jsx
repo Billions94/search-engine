@@ -8,7 +8,9 @@ const SingleJob  = ({ data, favorite, addToFavorites, removeFromFavorites, d, i}
         setSelected(true)
         addToFavorites(d)
       }
-  
+      
+      console.log('this id the company name ', favorite)
+
       const removeFavorite = (i) => {
         setSelected(false)
         removeFromFavorites(i)
@@ -18,8 +20,10 @@ const SingleJob  = ({ data, favorite, addToFavorites, removeFromFavorites, d, i}
         if(favorite.indexOf(d) !== -1){
             setSelected(true)
         }else(setSelected(false))
-        console.log('this id the company name ', d.company_name)
-    },[])
+        console.log('this id the company name ', d)
+        console.log('this id the company favorite ', favorite)
+
+    },[selected])
 
     return(
         <div>
