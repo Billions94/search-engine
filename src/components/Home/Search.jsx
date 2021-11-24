@@ -37,7 +37,7 @@ const Search = ({ data, setData, input, setInput }) => {
           <Form>
             <Form.Group controlId="formBasicEmail">
                 <Form.Label className='text-light'>
-                    Remote Job Search
+                    <b>Remote Job Search</b>
                 </Form.Label>
               <Form.Control
                 className="customInput"
