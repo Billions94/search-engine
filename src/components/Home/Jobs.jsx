@@ -10,25 +10,30 @@ const Jobs = ({ data }) => {
       {data && data.map(d => (
         <ul key={d._id} className=' list-group '>
             <div className='text-left NaN list-group-item pl-3 mb-2'>
-                <div className='d-flex'>
+                <div className='jobDivWrapper d-flex'>
+                  <div className='d-flex'>
                     <div className='mr-2'>
                     <img className='roundpic' src='https://picsum.photos/200/300' alt='' width='50px' />
                     </div>
-                    <div>
-                    <Link key={d._id}  className='text-dark' to={`/${d.company_name}`} >
-                        <div className='customerh1Span'>
-                           Job Title: {d.title}
-                        </div>
-                    </Link>
-                    <div className='customerh3Span text-muted'>
-                        Company: {d.company_name}
+                    <div className=''>
+                      <Link key={d._id}  className='text-dark' to={`/${d.company_name}`} >
+                          <div className='customerh1Span'>
+                            Job Title: {d.title}
+                          </div>
+                      </Link>
+                      <div className='customerh3Span text-muted'>
+                          Company: {d.company_name}
+                      </div>
+                      <div className='customerh3Span text-muted'>
+                          Job Type: {d.job_type}
+                      </div>
+                      <div className='customerh3Span text-muted'>
+                          Location: {d.candidate_required_location}
+                      </div>
                     </div>
-                    <div className='customerh3Span text-muted'>
-                        Job Type: {d.job_type}
-                    </div>
-                    <div className='customerh3Span text-muted'>
-                        Location: {d.candidate_required_location}
-                    </div>
+                </div>    
+                    <div className='customerh3Span text-muted ml-4'>
+                        <img onClick src="https://img.icons8.com/color/50/000000/add-to-favorites.png" width='30px'/>
                     </div>
                 </div>
             </div>

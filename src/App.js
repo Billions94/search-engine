@@ -4,6 +4,7 @@ import Search from './components/Home/Search';
 import NavBar from './components/Navbar/NavBar';
 import Footer from './components/Footer/Footer';
 import Company from './components/Company/Company';
+import Favorite from './components/Favorites/Favorite';
 import { useState } from "react"
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       input={input}
       setInput={setInput}/>}/>
       <Route path="/:company" element={<Company />}/>
+      <Route path="/favorites" element={<Favorite />}/>
     </Routes>
     <Footer />
     </div>

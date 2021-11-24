@@ -9,3 +9,11 @@
 .home:active {
     border-bottom: 2px solid white !important;
 }
+
+.favorites:hover {
+    text-decoration: none !important;
+}
+
+.favorites:hover {
+    border-bottom: 2px solid white !important;
+}

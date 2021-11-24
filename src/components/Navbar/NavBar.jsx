@@ -23,6 +23,11 @@ const NavBar = () => {
           <div className='text-light home'>Home</div>
           </Link>
         </NavItem>
+        <NavItem>
+        <Link className='home' to={'/favorites'}>
+          <div className='text-light favorites ml-2'>Favorites</div>
+          </Link>
+        </NavItem>
       </Navbar>
     </>
   );
