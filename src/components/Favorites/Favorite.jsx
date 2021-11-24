@@ -28,7 +28,7 @@ const Favorite = ({ favorite, removeFromFavorites }) => {
                  <h1 className="customh1 text-left">{el.company_name}</h1>
                 </Link>
                <div className='ml-4 removeFav'>
-                 <img onClick={() => removeFromFavorites(i)} src="https://img.icons8.com/fluency/50/000000/delete-sign.png" width='20px'/>
+                 <img onClick={() => removeFromFavorites(i)} alt='' src="https://img.icons8.com/fluency/50/000000/delete-sign.png" width='20px'/>
                </div>  
           </div>
         ))}

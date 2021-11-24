@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 
-const SingleJob  = ({ data, favorite, addToFavorites, removeFromFavorites, d, i}) => {
+const SingleJob  = ({ favorite, addToFavorites, removeFromFavorites, d, i}) => {
     const [selected, setSelected] = useState(false)
 
     const multiTask = (d) => {
@@ -16,14 +16,16 @@ const SingleJob  = ({ data, favorite, addToFavorites, removeFromFavorites, d, i}
         removeFromFavorites(i)
       }
   
-      useEffect(() => {
+    useEffect(() => {
         if(favorite.indexOf(d) !== -1){
             setSelected(true)
         }else(setSelected(false))
         console.log('this id the company name ', d)
         console.log('this id the company favorite ', favorite)
 
-    },[selected])
+    },
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+    [selected])
 
     return(
         <div>
@@ -54,8 +56,8 @@ const SingleJob  = ({ data, favorite, addToFavorites, removeFromFavorites, d, i}
                         <div className='favoriteIcon text-muted ml-4'>
                           {
                             selected === false ? 
-                            <img onClick={() => multiTask(d)} src="https://img.icons8.com/color/50/000000/add-to-favorites.png" width='30px'/>
-                          : <img onClick={() => removeFavorite(i)} src="https://img.icons8.com/ultraviolet/50/000000/add-to-favorites.png" width='30px'/>
+                            <img onClick={() => multiTask(d)} alt='' src="https://img.icons8.com/color/50/000000/add-to-favorites.png" width='30px'/>
+                          : <img onClick={() => removeFavorite(i)} alt='' src="https://img.icons8.com/ultraviolet/50/000000/add-to-favorites.png" width='30px'/>
                           }
                             
                         </div>

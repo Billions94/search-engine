@@ -24,9 +24,10 @@ const Search = ({ data, setData, input, setInput }) => {
   };
 
   useEffect(() => {
-      //react-hooks/exhaustive-deps
     getJobs();
-  }, [input]);
+  }, 
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  [input]);
 
  
 
