@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { addToFavAction, removeFromFavAction } from "../../redux/actions";
 import SingleJob from "./SingleJob";
 import Alert from "react-bootstrap/Alert"
+import ReactPlaceholder from "react-placeholder";
+import "react-placeholder/lib/reactPlaceholder.css";
 
 const mapStateToProps = state => ({
   favorite: state.data.favorites,
@@ -33,26 +35,28 @@ const Jobs = ({ jobs, data, favorite, addToFavorites, removeFromFavorites, isErr
 
   return (
     <div className='mt-5 mb-0 customDiv text-dark px-3 pt-0 pb-2'>
-        <h3 className='text-light mt-0 text-left mb-5 jobs sticky-top'>Jobs </h3> 
-      {jobs && jobs.map((d, i)=> (
+      <h3 className='text-light mt-0 text-left mb-5 jobs sticky-top'>Jobs </h3> 
+      { isLoading ? 
+          <ReactPlaceholder type='text' ready={false} rows={10} color='#E0E0E0'>
+            <SingleJob />
+          </ReactPlaceholder> : (
         <div>
-        {
-          isError ?   <div><Alert variant="warning">ERROR WHILE FETCHING</Alert></div> : 
-          (
-            <SingleJob 
-            addToFavorites={addToFavorites}
-            favorite={favorite}
-            removeFromFavorites={removeFromFavorites}
-             d={d} i={i}/>
-          )
-        },
-         {/* <SingleJob 
-        // addToFavorites={addToFavorites}
-        // favorite={favorite}
-        // removeFromFavorites={removeFromFavorites}
-        //  d={d} i={i}/> */}
+          { isError ?
+            <div><Alert variant="warning" > Error occured while fetching</Alert></div> :
+            (
+            <div>
+              {jobs && jobs.map((d, i)=> (
+                <SingleJob 
+                addToFavorites={addToFavorites}
+                favorite={favorite}
+                removeFromFavorites={removeFromFavorites}
+                d={d} i={i}/>
+                ))}
+            </div>
+            )
+          }
         </div>
-      ))}
+      )}
     </div>
   );
 };
