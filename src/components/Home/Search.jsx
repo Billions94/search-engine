@@ -4,27 +4,39 @@ import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import Jobs from "./Jobs";
+import { connect } from "react-redux"
+import { getJobsAction } from "../../redux/actions";
 
-const Search = ({ data, setData, input, setInput }) => {
+
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = (dispatch) => ({
+   getJobs: (input) => dispatch(getJobsAction(input))
+})
+
+
+const Search = ({ data, setData, input, setInput, getJobs }) => {
+
 
 
   console.log('==============> input', input)
-  const getJobs = async () => {
-    try {
-        const response = await fetch(`https://strive-jobs-api.herokuapp.com/jobs?search=${input.text}&limit=10`);
-        if (response.ok) {
-          const data = await response.json();
-          console.log("i am the data", data.data);
-          const newData = data.data;
-          setData(newData);
-        }
-    } catch (error) {
-        console.log(error)
-    }
-  };
+  // const getJobs = async () => {
+  //   try {
+  //       const response = await fetch(`https://strive-jobs-api.herokuapp.com/jobs?search=${input.text}&limit=10`);
+  //       if (response.ok) {
+  //         const data = await response.json();
+  //         console.log("i am the data", data.data);
+  //         const newData = data.data;
+  //         setData(newData);
+  //       }
+  //   } catch (error) {
+  //       console.log(error)
+  //   }
+  // };
 
   useEffect(() => {
-    getJobs();
+    getJobs(input);
   }, 
    // eslint-disable-next-line react-hooks/exhaustive-deps
   [input]);
@@ -56,4 +68,4 @@ const Search = ({ data, setData, input, setInput }) => {
   );
 };
 
-export default Search;
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
