@@ -9,7 +9,7 @@ const SingleJob  = ({ favorite, addToFavorites, removeFromFavorites, d, i}) => {
         addToFavorites(d)
       }
       
-      console.log('this id the company name ', favorite)
+      // console.log('this id the company name ', favorite)
 
       const removeFavorite = (i) => {
         setSelected(false)
@@ -17,7 +17,8 @@ const SingleJob  = ({ favorite, addToFavorites, removeFromFavorites, d, i}) => {
       }
   
     useEffect(() => {
-        if(favorite.indexOf(d) !== -1){
+      console.log('THIS IS SETTING THE SELECTED ONES')
+        if(favorite.map(f => f._id).indexOf(d._id) !== -1){
             setSelected(true)
         }else(setSelected(false))
         console.log('this id the company name ', d)
