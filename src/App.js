@@ -8,22 +8,17 @@ import Favorite from './components/Favorites/Favorite';
 import { useState } from "react"
 
 function App() {
-  const [search, setSearch] = useState(null);
+
   const [input, setInput] = useState({
     text: "",
   });
 
-  console.log(search)
   return (
     <Router>
     <div className="App">
       <NavBar />
     <Routes>
-      <Route path="/search" element={<Search 
-      data={search}
-      setData={setSearch}
-      input={input}
-      setInput={setInput}/>}/>
+      <Route path="/search" element={<Search input={input} setInput={setInput}/>}/>
       <Route path="/:company" element={<Company />}/>
       <Route path="/favorites" element={<Favorite />}/>
     </Routes>

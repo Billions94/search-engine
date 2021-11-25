@@ -16,24 +16,9 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-const Search = ({ data, setData, input, setInput, getJobs }) => {
+const Search = ({ input, setInput, getJobs }) => {
 
 
-
-  console.log('==============> input', input)
-  // const getJobs = async () => {
-  //   try {
-  //       const response = await fetch(`https://strive-jobs-api.herokuapp.com/jobs?search=${input.text}&limit=10`);
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         console.log("i am the data", data.data);
-  //         const newData = data.data;
-  //         setData(newData);
-  //       }
-  //   } catch (error) {
-  //       console.log(error)
-  //   }
-  // };
 
   useEffect(() => {
     getJobs(input);
@@ -63,7 +48,7 @@ const Search = ({ data, setData, input, setInput, getJobs }) => {
           </Form>
         </div>
       </Col>
-        <Col md={7}>{input.text ? <Jobs data={data} /> : null}</Col>
+        <Col md={7}>{input.text ? <Jobs  /> : null}</Col>
     </Row>
   );
 };

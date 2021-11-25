@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-const Jobs = ({ jobs, data, favorite, addToFavorites, removeFromFavorites, isError, isLoading } ) => {
+const Jobs = ({ jobs, favorite, addToFavorites, removeFromFavorites, isError, isLoading } ) => {
 
   
 
