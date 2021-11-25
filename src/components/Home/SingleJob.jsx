@@ -21,9 +21,6 @@ const SingleJob  = ({ favorite, addToFavorites, removeFromFavorites, d, i}) => {
         if(favorite.map(f => f._id).indexOf(d._id) !== -1){
             setSelected(true)
         }else(setSelected(false))
-        console.log('this id the company name ', d)
-        console.log('this id the company favorite ', favorite)
-
     },
      // eslint-disable-next-line react-hooks/exhaustive-deps
     [selected])
