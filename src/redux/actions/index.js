@@ -36,7 +36,7 @@ export const getJobsAction = (input) => {
             type: TOGGLE_LOADER,
             payload: false,
           });
-        }, 2000);
+        }, 3000);
 
       } else {
         console.log("Alpha team we got a problem");

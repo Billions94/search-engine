@@ -37,7 +37,7 @@ const Jobs = ({ jobs, data, favorite, addToFavorites, removeFromFavorites, isErr
     <div className='mt-5 mb-0 customDiv text-dark px-3 pt-0 pb-2'>
       <h3 className='text-light mt-0 text-left mb-5 jobs sticky-top'>Jobs </h3> 
       { isLoading ? 
-          <ReactPlaceholder type='text' ready={false} rows={10} color='#E0E0E0'>
+          <ReactPlaceholder showLoadingAnimation={true} type='text' ready={false} rows={15} color='#E0E0E0'>
             <SingleJob />
           </ReactPlaceholder> : (
         <div>
