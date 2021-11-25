@@ -1,5 +1,5 @@
-import { createStore } from "redux"
-import mainReducer from "../reducers"
+import { createStore, applyMiddleware, combineReducers, compose } from "redux"
+import mainReducer from "../reducers/favorites"
 
 export const initialState = {
     data: {
