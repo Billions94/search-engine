@@ -6,7 +6,7 @@ import ReactPlaceholder from "react-placeholder";
 import "react-placeholder/lib/reactPlaceholder.css";
 
 
-const Jobs = ({ jobs } ) => {
+const Jobs = () => {
 
   const favorite = useSelector(state => state.data.favorites)
   const { data, isError, isLoading } = useSelector(state => state.jobs)
@@ -15,7 +15,6 @@ const Jobs = ({ jobs } ) => {
   const removeFromFavorites = useDispatch()
 
   console.log("mind you i'm in data",data)
-  console.log("mind you i'm in jobs",addToFavorites)
 
   return (
     <div className='mt-5 mb-0 customDiv text-dark px-3 pt-0 pb-2'>
@@ -29,7 +28,7 @@ const Jobs = ({ jobs } ) => {
             <div><Alert variant="warning" > Error occured while fetching</Alert></div> :
             (
             <div>
-              {jobs && jobs.map((d, i)=> (
+              {data && data.map((d, i)=> (
                 <SingleJob 
                 addToFavorites={addToFavorites}
                 favorite={favorite}

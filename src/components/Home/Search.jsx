@@ -4,24 +4,18 @@ import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import Jobs from "./Jobs";
-import { connect } from "react-redux"
+import { useDispatch } from "react-redux"
 import { getJobsAction } from "../../redux/actions";
 
 
 
-const mapStateToProps = state => ({})
+const Search = ({ input, setInput }) => {
 
-const mapDispatchToProps = (dispatch) => ({
-   getJobs: (input) => dispatch(getJobsAction(input))
-})
-
-
-const Search = ({ input, setInput, getJobs }) => {
-
+  const getJobs = useDispatch()
 
 
   useEffect(() => {
-    getJobs(input);
+    getJobs(getJobsAction(input));
   }, 
    // eslint-disable-next-line react-hooks/exhaustive-deps
   [input]);
@@ -48,9 +42,9 @@ const Search = ({ input, setInput, getJobs }) => {
           </Form>
         </div>
       </Col>
-        <Col md={7}>{input.text ? <Jobs  /> : null}</Col>
+        <Col md={7}>{input.text ? <Jobs /> : null}</Col>
     </Row>
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default Search;
