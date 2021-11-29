@@ -1,20 +1,25 @@
 import React from "react";
-import { connect } from "react-redux";
+import {  useSelector, useDispatch } from "react-redux";
 import { removeFromFavAction } from "../../redux/actions";
 import { Link } from "react-router-dom"
 import "./styles.css"
 
-const mapStateToProps = (state) => ({
-  favorite: state.data.favorites,
-});
+// const mapStateToProps = (state) => ({
+//   favorite: state.data.favorites,
+// });
 
-const mapDispatchToProps = (dispatch) => ({
-    removeFromFavorites: (favIndex) => {
-        dispatch(removeFromFavAction(favIndex))
-    }
-});
+// const mapDispatchToProps = (dispatch) => ({
+//     removeFromFavorites: (favId) => {
+//         dispatch(removeFromFavAction(favId))
+//     }
+// });
 
-const Favorite = ({ favorite, removeFromFavorites }) => {
+const Favorite = () => {
+
+  const favorite = useSelector(state => state.data.favorites)
+  const removeFromFavorites = useDispatch()
+
+
   console.log("favorite", favorite);
   return (
     <div className='favDivContainer mx-auto col-6 mt-3 '>
@@ -28,7 +33,7 @@ const Favorite = ({ favorite, removeFromFavorites }) => {
                  <h1 className="customh1 text-left">{el.company_name}</h1>
                 </Link>
                <div className='ml-4 removeFav'>
-                 <img onClick={() => removeFromFavorites(i)} alt='' src="https://img.icons8.com/fluency/50/000000/delete-sign.png" width='20px'/>
+                 <img onClick={() => removeFromFavorites(removeFromFavAction(el._id))} alt='' src="https://img.icons8.com/fluency/50/000000/delete-sign.png" width='20px'/>
                </div>  
           </div>
         ))}
@@ -36,4 +41,4 @@ const Favorite = ({ favorite, removeFromFavorites }) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Favorite);
+export default Favorite

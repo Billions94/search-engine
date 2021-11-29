@@ -1,33 +1,22 @@
 import React from "react";
-import { connect } from "react-redux";
-import { addToFavAction, removeFromFavAction } from "../../redux/actions";
+import { useSelector, useDispatch } from "react-redux";
 import SingleJob from "./SingleJob";
 import Alert from "react-bootstrap/Alert"
 import ReactPlaceholder from "react-placeholder";
 import "react-placeholder/lib/reactPlaceholder.css";
 
-const mapStateToProps = state => ({
-  favorite: state.data.favorites,
-  jobs: state.jobs.data,
-  isError: state.jobs.isError,
-  isLoading: state.jobs.isLoading
-})
 
-const mapDispatchToProps = (dispatch) => ({
-  addToFavorites: (fav) => {
-    dispatch(addToFavAction(fav))
-  },
-  removeFromFavorites: (favIndex) => {
-    dispatch(removeFromFavAction(favIndex))
-  }
-})
+const Jobs = ({ jobs } ) => {
 
+  const favorite = useSelector(state => state.data.favorites)
+  const { data, isError, isLoading } = useSelector(state => state.jobs)
 
-const Jobs = ({ jobs, favorite, addToFavorites, removeFromFavorites, isError, isLoading } ) => {
+  const addToFavorites = useDispatch()
+  const removeFromFavorites = useDispatch()
 
   
 
-  console.log("mind you i'm in data",jobs)
+  console.log("mind you i'm in data",data)
     console.log("mind you i'm in jobs",addToFavorites)
 
  
@@ -61,4 +50,4 @@ const Jobs = ({ jobs, favorite, addToFavorites, removeFromFavorites, isError, is
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Jobs)
+export default Jobs

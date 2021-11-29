@@ -9,9 +9,9 @@ export const addToFavAction = (fav) => ({
   payload: fav,
 });
 
-export const removeFromFavAction = (favIndex) => ({
+export const removeFromFavAction = (favId) => ({
   type: REMOVE_FROM_FAVORITE,
-  payload: favIndex,
+  payload: favId,
 });
 
 export const getJobsAction = (input) => {

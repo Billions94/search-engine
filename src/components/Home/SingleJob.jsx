@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
+import { addToFavAction, removeFromFavAction } from "../../redux/actions";
 
 const SingleJob  = ({ favorite, addToFavorites, removeFromFavorites, d, i}) => {
     const [selected, setSelected] = useState(false)
 
     const multiTask = (d) => {
         setSelected(true)
-        addToFavorites(d)
+        addToFavorites(addToFavAction(d))
       }
       
       // console.log('this id the company name ', favorite)
 
-      const removeFavorite = (i) => {
+      const removeFavorite = (id) => {
         setSelected(false)
-        removeFromFavorites(i)
+        removeFromFavorites(removeFromFavAction(id))
       }
   
     useEffect(() => {
@@ -55,7 +56,7 @@ const SingleJob  = ({ favorite, addToFavorites, removeFromFavorites, d, i}) => {
                           {
                             selected === false ? 
                             <img onClick={() => multiTask(d)} alt='' src="https://img.icons8.com/color/50/000000/add-to-favorites.png" width='30px'/>
-                          : <img onClick={() => removeFavorite(i)} alt='' src="https://img.icons8.com/ultraviolet/50/000000/add-to-favorites.png" width='30px'/>
+                          : <img onClick={() => removeFavorite(d._id)} alt='' src="https://img.icons8.com/ultraviolet/50/000000/add-to-favorites.png" width='30px'/>
                           }
                             
                         </div>
