@@ -14,13 +14,8 @@ const Jobs = ({ jobs } ) => {
   const addToFavorites = useDispatch()
   const removeFromFavorites = useDispatch()
 
-  
-
   console.log("mind you i'm in data",data)
-    console.log("mind you i'm in jobs",addToFavorites)
-
- 
-
+  console.log("mind you i'm in jobs",addToFavorites)
 
   return (
     <div className='mt-5 mb-0 customDiv text-dark px-3 pt-0 pb-2'>
