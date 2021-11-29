@@ -1,9 +1,12 @@
 import React from "react";
 import { Navbar, NavItem } from "react-bootstrap";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./styles.css"
 
 const NavBar = () => {
+
+  const navigate = useNavigate()
+
   return (
     <>
       <Navbar className="customBg sticky-top" variant="dark">
@@ -19,14 +22,10 @@ const NavBar = () => {
         </Navbar.Brand>
         </Link>
         <NavItem>
-          <Link className='home' to={'/search'}>
-          <div className='text-light home'>Home</div>
-          </Link>
+          <div onClick={() => navigate('/search')} className='text-light home'>Home</div>
         </NavItem>
         <NavItem>
-        <Link className='home' to={'/favorites'}>
-          <div className='text-light favorites ml-2'>Favorites</div>
-          </Link>
+          <div onClick={() => navigate('/favorites')}  className='text-light favorites ml-2'>Favorites</div>
         </NavItem>
       </Navbar>
     </>

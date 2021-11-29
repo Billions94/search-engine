@@ -5,6 +5,7 @@
 
 .home:hover{
     text-decoration: none !important;
+    cursor: pointer;
 }
 
 
@@ -14,6 +15,7 @@
 
 .favorites:hover {
     text-decoration: none !important;
+    cursor: pointer;
 }
 
 .favorites:hover {
